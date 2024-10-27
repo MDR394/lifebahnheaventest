@@ -2,11 +2,17 @@ import dotenv from "dotenv";
 
 import connectDB from "./db/index.js";
 import { app } from "./app.js";
-
+import cors from "cors";
 dotenv.config({
   path: "./env",
 });
-
+app.use(
+  cors({
+    origin: "https://lifebahnheaventest-frontend.vercel.app", // Frontend URL
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 connectDB()
   .then(() => {
     app.on("error", (error) => {
