@@ -1,6 +1,6 @@
 const API_URL =
   process.env.NODE_ENV === "production"
-    ? "https://lifebahnheaventestserver.vercel.app/"
+    ? "https://lifebahnheaventest.vercel.app/"
     : "http://localhost:3000";
 
 export default API_URL;
